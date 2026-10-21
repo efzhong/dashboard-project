@@ -634,7 +634,7 @@ function historyBlock(reports) {
     <p class="muted small">Neighbors often report the same outage more than once. An outage can appear as several reports.</p>`;
 }
 
-//  helpers
+//  helpers: asked Claude for help in understanding
 
 function setStatus(message, isError = false) {
   els.status.textContent = message;
