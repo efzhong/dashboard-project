@@ -14,8 +14,11 @@ To answer the "what should I do?", I included the city's online request form and
 
 Data sources:
 City of Philadelphia, Philly311. 311 Service and Information Requests. OpenDataPhilly. https://opendataphilly.org/datasets/311-service-and-information-requests/
+
 City of Philadelphia, Department of Planning and Development. City Council Districts (2024). OpenDataPhilly. (https://opendataphilly.org/datasets/city-council-districts/)]
+
 City of Philadelphia. Report a problem with a street or alley light. https://www.phila.gov/services/streets-sidewalks-alleys/report-a-problem-on-a-city-street-sidewalk-or-alley/report-a-problem-with-a-street-or-alley-light/
+
 Address search © OpenStreetMap contributors, via Nominatim. Basemap © CARTO, © OpenStreetMap contributors.
 
 I received assistance from Claude AI in several parts to troubleshoot and identify the best pathway to the web design I wanted (denoted by a comment in that section of code). This was built with MapLibre GL JS and Papa Parse.
