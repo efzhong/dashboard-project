@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Philly Streetlight Check</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=ranade@400,401,700,701&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside id="panel">
+    <header>
+      <h1>Is my streetlight out?</h1>
+      <p class="sub">This tool shows street and alley light outages reported to Philly311. 
+        <p>Check below to see the status of nearby streetlights and who to contact.</p>
+      </p>
+    </header>
+
+    <form id="search-form" role="search">
+      <label for="address-input" class="visually-hidden">Philadelphia address</label>
+      <input id="address-input" type="text" placeholder="Enter a Philly address" autocomplete="street-address">
+      <button type="submit">Search</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+
+    <section id="nearest" hidden>
+      <h2>Nearest streetlights</h2>
+      <ol id="nearest-list"></ol>
+    </section>
+
+    <section id="detail" aria-live="polite" hidden></section>
+
+    <section id="districts" hidden>
+      <h2>Reports by council district</h2>
+      <ol id="district-list"></ol>
+      <p id="district-note" class="muted small"></p>
+    </section>
+
+    <section id="legend">
+      <h2>Map key</h2>
+      <ul>
+        <li><span class="swatch swatch-out"></span>Open 311 outage report</li>
+        <li><span class="swatch swatch-closed"></span>Closed 311 outage report</li>
+        <li><span class="swatch swatch-pole"></span>City-owned streetlight</li>
+        <li><span class="swatch swatch-district"></span>Council district, darker = more reports</li>
+      </ul>
+      <label class="toggle">
+        <input id="show-closed" type="checkbox">
+        Show closed reports
+      </label>
+    </section>
+
+    <footer class="muted small">
+      311 data and council districts:
+      <a href="https://opendataphilly.org/datasets/311-service-and-information-requests/" target="_blank" rel="noopener">OpenDataPhilly</a>.
+      Geocoding and basemap © OpenStreetMap contributors, © CARTO.
+    </footer>
+  </aside>
+
+  <main id="map" aria-label="Map of Philadelphia streetlights, 311 light outage reports, and council districts"></main>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
